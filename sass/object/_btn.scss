@@ -1,0 +1,23 @@
+// ボタン
+
+// 基本の設定
+%--default {
+  color: $color-text;
+  background: $color-orange;
+  transition: .3s;
+}
+
+.btn{
+  display: inline-block;
+  padding: 20px 30px;
+  text-decoration: none;
+
+  // 基本
+  &--default {
+    @extend %--default;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
