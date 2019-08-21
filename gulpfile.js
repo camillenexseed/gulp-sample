@@ -35,7 +35,7 @@ gulp.task('sass', function () {
 
 // SASSのウオッチ
 gulp.task('sass:watch', function () {
-  gulp.watch(['./sass/*.scss', './sass/**/*.scss'], gulp.series('sass')).on('change', browserSync.reload);
+  gulp.watch(['./sass/*.scss', './sass/**/*.scss'], gulp.series('sass'));
 });
 
 
