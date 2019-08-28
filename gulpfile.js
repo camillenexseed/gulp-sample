@@ -28,7 +28,7 @@ gulp.task('sass', function () {
       beautify: false
     }))
     // mapの出力
-    .pipe(gulp.dest('./css', { sourcemaps: './maps' }))
+    .pipe(gulp.dest('./build/css/', { sourcemaps: './build/maps/' }))
     .pipe(browserSync.reload({ stream: true }))
     ;
 });
@@ -41,14 +41,14 @@ gulp.task('sass:watch', function () {
 
 // HTMLのウオッチ
 gulp.task('html:watch', function () {
-  gulp.watch(['./*.html', './**/*.html']).on('change', browserSync.reload);
+  gulp.watch(['./build/*.html', './build/**/*.html']).on('change', browserSync.reload);
 });
 
 //ブラウザシンク
 gulp.task('bs', function () {
   browserSync({
     server: {
-      baseDir: './',
+      baseDir: './build/',
       index: 'index.html'
     },
     open: true,

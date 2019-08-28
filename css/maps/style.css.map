@@ -1,1 +1,0 @@
-{"version":3,"file":"style.css","sources":["style.scss"],"sourcesContent":[".btn{\n  display: inline-block;\n  color: #ffffff;\n  background: orangered;\n  padding: 20px 30px;\n  text-decoration: none;\n}\n"],"names":[],"mappings":"AAAA,AAAA,IAAI,AAAA,CACF,OAAO,CAAE,YAAY,CACrB,KAAK,CAAE,OAAO,CACd,UAAU,CAAE,SAAS,CACrB,OAAO,CAAE,SAAS,CAClB,eAAe,CAAE,IAAI,CACtB"}
