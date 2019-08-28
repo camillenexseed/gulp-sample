@@ -59,3 +59,6 @@ gulp.task('bs', function () {
 // gulpで動く
 gulp.task('default', gulp.parallel('html:watch', 'bs', 'sass:watch')
 );
+
+gulp.task('build', gulp.parallel('sass')
+);
