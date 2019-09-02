@@ -16,14 +16,12 @@ sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
   return gulp.src(['./sass/*.scss', './sass/**/*.scss'], { sourcemaps: true })
+    .pipe(plumber({
+      errorHandler: notify.onError({ message: "<%= error.message %>" })
+    }))
     .pipe(sass({
       outputStyle: 'compressed',
     }))
-    //エラーの処理
-    .pipe(plumber({
-      errorHandler: notify.onError("Error: <%= error.message %>")
-    }))
-    //メディアクエリを一つにまとめる
     .pipe(mq({
       beautify: false
     }))
@@ -47,12 +45,13 @@ gulp.task('html:watch', function () {
 //ブラウザシンク
 gulp.task('bs', function () {
   browserSync({
+    open: "external",
+    // open: "false",
+    browser: ["google chrome"],
     server: {
       baseDir: './build/',
       index: 'index.html'
     },
-    open: true,
-    browser: ["chrome"]
   })
 })
 
